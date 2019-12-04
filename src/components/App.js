@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import fetch from 'isomorphic-fetch';
 import logo from './logo.svg';
-import { BACKEND_SERVER_PORT } from './constants';
 import './App.css';
+import {fetchReports} from '../redux/actions/CreditNovaReports'
+import { connect } from 'http2';
+import { bindActionCreators } from 'redux'
 
 class App extends Component {
 	componentDidMount() {
+		const cursor = "2014-11-12T02:18:22.094Z";
+		const count = 5;
 		// Example get reports request
-		fetch(`http://localhost:${BACKEND_SERVER_PORT}/api/requests?count=10&cursor=2010-11-12T02:18:22.094Z`)
-		.then(res => res.json())
-		.then(result => console.log('Example report request', result));
+		console.log('in here')
+		this.props.fetchReports(count, cursor)
+
 	}
 	render() {
 		return (
@@ -23,4 +26,11 @@ class App extends Component {
 	}
 }
 
-export default App;
+const mapStateToProps = state => ({
+	state
+})
+const mapDispatchToProps = dispatch => bindActionCreators({
+	fetchReports, 
+}, dispatch
+)
+export default connect(mapStateToProps, mapDispatchToProps)(App);
