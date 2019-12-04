@@ -11,7 +11,10 @@ class App extends Component {
 		const count = 5;
 		// Example get reports request
 		console.log('in here')
+		console.log("this is props", this.props)
+		console.log("thisisistate",this.state)
 		this.props.fetchReports(count, cursor)
+
 
 	}
 	render() {
@@ -28,7 +31,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-	reports: state.reports
+	//issue here, with fetch reports
+	reports: state.fetchReports
 })
 const mapDispatchToProps = dispatch => bindActionCreators({
 	fetchReports, 

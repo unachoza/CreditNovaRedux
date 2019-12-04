@@ -9,11 +9,11 @@ export const fetchReports =  (count, cursor) => async dispatch => {
   const response = await fetch(
     `http://localhost:${BACKEND_SERVER_PORT}/${BASE_URL}?count=${count}&cursor=${cursor}`
   );
-  console.log(response)
+  console.log(await response.json())
   dispatch({
     type: FETCH_REPORTS, 
     payload: {
-      reports: (response.json()).reports
+      reports: (await response.json()).reports
     }
   })
 }
