@@ -1,0 +1,38 @@
+{
+  "name": "code-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "git@github.com:neednova/frontend-challenge.git",
+  "scripts": {
+    "start": "react-scripts start",
+    "start:server": "nodemon ./backend/server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "db:randomize": "node ./backend/database/randomize.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/*",
+      "public/*"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "express": "4.17.1",
+    "isomorphic-fetch": "2.2.1",
+    "moment": "2.24.0",
+    "morgan": "1.9.1",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-redux": "^7.1.3",
+    "react-scripts": "1.0.17",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.12.1",
+    "redux-logger": "^3.0.6",
+    "uuid": "3.1.0"
+  }
+}
