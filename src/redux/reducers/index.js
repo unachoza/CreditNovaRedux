@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import fetchReports from './FetchReports'
+import reports from './reports'
 
 

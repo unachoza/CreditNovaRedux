@@ -12,7 +12,7 @@ export const fetchReports =  (count, cursor) => async dispatch => {
   response = await response.json() 
   response = response.reports
   console.log(response)
-  return dispatch({
+  dispatch({
     type: FETCH_REPORTS, 
     payload: {
       reports: response

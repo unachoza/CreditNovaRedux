@@ -28,8 +28,8 @@ class App extends Component {
 					{/* {reports.map(report => <h1>{report.id}</h1>)} */}
 				</header>
 				<h1>hello Nova Credit</h1>
-				{/* <SimpleTable reports={reports}/> */}
-				{reports ? reports.map(report => <h1>{report.firstName}</h1>)
+				
+				{reports ? <SimpleTable reports={reports}/>
 				:<h1>loading</h1>}
 			</div>
 		);

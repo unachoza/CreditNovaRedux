@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
-import FetchReports from './redux/reducers/FetchReports'
+import FetchReports from './redux/reducers/reports'
 
 const logger = createLogger();
 const store = createStore(FetchReports, applyMiddleware(thunkMiddleware, logger));
