@@ -19,10 +19,10 @@ const useStyles = makeStyles({
 });
 
 export default function SimpleTable({ reports }) {
-  console.log(reports)
+  console.log(reports);
   const classes = useStyles();
   return (
-    <Paper style={{ width: "80%", margin: "auto"}} className={classes.root}>
+    <Paper style={{ width: '80%', margin: 'auto' }} className={classes.root}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -37,7 +37,7 @@ export default function SimpleTable({ reports }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {reports.map(row => (
+          {reports.map((row) => (
             <TableRow key={row.id}>
               <TableCell align="left">{row.id}</TableCell>
               <TableCell align="right">{row.score}</TableCell>
@@ -46,7 +46,20 @@ export default function SimpleTable({ reports }) {
               <TableCell align="right">{row.dob}</TableCell>
               <TableCell align="right">{row.ssn}</TableCell>
               <TableCell align="right">{row.createdAt}</TableCell>
-              <TableCell align="right"><button style={{ padding: 20, color: "white", backgroundColor: "#000666", fontSize: 20, borderRadius: 20 }}>Archive</button></TableCell>
+              <TableCell align="right">
+                <button
+                  style={{
+                    padding: 10,
+                    color: 'white',
+                    backgroundColor: '#3D68A3',
+                    fontSize: 15,
+                    borderRadius: 5,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Archive
+                </button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
